@@ -70,25 +70,25 @@ tic
 
 fprintf("ALGORITHM 4.2 (Orbital Elements from State Vector)\n\n");
 
-rvecx = -6045;
-rvecy = -3490;
-rvecz = 2500;
+% rvecx = -6045;
+% rvecy = -3490;
+% rvecz = 2500;
 
-% rvecx = input('r vector X value: ');        % X,Y,Z values for r vector
-% rvecy = input('r vector Y value: ');
-% rvecz = input('r vector Z value: ');
-% fprintf('\n');
+rvecx = input('r vector X value: ');          % X,Y,Z values for r vector
+rvecy = input('r vector Y value: ');
+rvecz = input('r vector Z value: ');
+fprintf('\n');
 
 rvec = [rvecx,rvecy,rvecz];                   % r vector matrix
 
-vvecx = -3.457;
-vvecy = 6.618;
-vvecz = 2.533;
+% vvecx = -3.457;
+% vvecy = 6.618;
+% vvecz = 2.533;
 
-% vvecx = input('v vector X value: ');        % X,Y,Z values for v vector
-% vvecy = input('v vector Y value: ');
-% vvecz = input('v vector Z value: ');
-% fprintf('\n');
+vvecx = input('v vector X value: ');          % X,Y,Z values for v vector
+vvecy = input('v vector Y value: ');
+vvecz = input('v vector Z value: ');
+fprintf('\n');
 
 vvec = [vvecx,vvecy,vvecz];                   % v vector matrix
 r = sqrt(sum(rvec.*rvec));                    % Magnitude of r vector
