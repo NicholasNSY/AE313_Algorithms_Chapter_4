@@ -1,4 +1,4 @@
-# Kappa AE313 Algorithms for Chapter 4 Kappa
+# Kappa Algorithms for Chapter 4 Kappa
 
 ## :space_invader: ERAU AE313 :space_invader:
 
