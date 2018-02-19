@@ -18,4 +18,6 @@
     - Argument of Perigee (**ω**)                             
     - True Anomaly (**θ**)                             
                                  
-                                  
+**3. ALGORITHM 4.3, dcm_to_euler.m**
+- **__Status__**: :+1:
+  - Direction Cosine Matrix to Classical Euler Rotation Sequence (**α, β, γ**).                                 
