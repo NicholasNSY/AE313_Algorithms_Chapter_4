@@ -14,8 +14,8 @@
 % 2. Calculate the speed: v = sqrt(sum(vvec.*vvec)) = sqrt(v(x)^2+y(x)^2+z(x)^2)
 % 3. Calculate the radial velocity: vr  = (sum(rvec.*vvec))/r = ??
 % 
-%    #Note: vr>0, satellite is flying away from perigee.
-%           vr<0, satellite is flying toward perigee.
+%    #Note: vr > 0, satellite is flying away from perigee.
+%           vr < 0, satellite is flying toward perigee.
 %
 % 4. Calculate the specific angular momentum: hvec = cross(rvec,vvec) = ??
 % 5. Calculate the magnitude of the specific angular momentum: h = sqrt(sum(hvec.*hvec))
@@ -30,13 +30,13 @@
 %
 % 7. Calculate node line vector: Nvec = cross(K_hat,hvec) = ??
 % 8. Calculate the magnitude of N: N = sqrt(sum(Nvec.*Nvec))
-% 9. Calculate the right ascension of the ascending node (?): Lomega = acos(Nx/N) 
+% 9. Calculate the right ascension of the ascending node: Lomega = acos(Nx/N) 
 %
-%    #Note: !~RA of the AN (?) is the third(3) orbital element.~!
+%    #Note: !~RA of the AN (Lomega) is the third(3) orbital element.~!
 %           Lomega = acos(Nx/N) for (Ny >= 0)
-%           Lomega = 2*pi - acos(Nx/N) for (Ny < 0)
+%           Lomega = 2*pi-acos(Nx/N) for (Ny < 0)
 %
-% 10. Calculate the eccentricity vector: evec = (1/mu).*((((v^2)-(mu/r)).*rvec) - (r.*vr.*vvec))
+% 10. Calculate the eccentricity vector: evec = (1/mu).*((((v^2)-(mu/r)).*rvec)-(r.*vr.*vvec))
 %
 %     #Note: mu = Gravitational Parameter
 %
@@ -44,22 +44,22 @@
 %
 %     #Note: !~Eccentricity (e) is the fourth(4) orbital element.~!
 %
-%     #Alternative: e = sqrt(1 + (h^2/mu^2)*(v^2-(2mu/r)))   
+%     #Alternative: e = sqrt(1+(h^2/mu^2)*(v^2-(2mu/r)))   
 %
-% 12. Calculate the argument of perigee (?): Somega = acos(sum((Nvec/N).*(evec/e)))
+% 12. Calculate the argument of perigee: Somega = acos(sum((Nvec/N).*(evec/e)))
 %
-%     #Note: !~Argument of Perigee (?) is the fifth(5) orbital element.~!
+%     #Note: !~Argument of Perigee (Somega) is the fifth(5) orbital element.~!
 %            Somega = acos(sum((Nvec/N).*(evec/e))) for (ez >= 0)
-%            Somega = 2*pi - acos(sum((Nvec/N).*(evec/e))) for (ez < 0)
+%            Somega = 2*pi-acos(sum((Nvec/N).*(evec/e))) for (ez < 0)
 %
-% 13. Calculate the true anomaly (?): theta = acos(sum((evec/e).*(rvec/r)))
+% 13. Calculate the true anomaly: theta = acos(sum((evec/e).*(rvec/r)))
 %     
-%     #Note: !~True Anomaly (?) is the sixth(6) orbital element.~!
+%     #Note: !~True Anomaly (theta) is the sixth(6) orbital element.~!
 %            theta = acos(sum((evec/e).*(rvec/r))) for (vr >= 0)
-%            theta = 2*pi - acos(sum((evec/e).*(rvec/r))) for (vr < 0)
+%            theta = 2*pi-acos(sum((evec/e).*(rvec/r))) for (vr < 0)
 %
 %     #Alternative: theta = acos((1/e)*((h^2/(mu*r))-1)) for (vr >= 0)
-%                   theta = 2*pi - acos((1/e)*((h^2/(mu*r))-1)) for (vr < 0)
+%                   theta = 2*pi-acos((1/e)*((h^2/(mu*r))-1)) for (vr < 0)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %% ALGORITHM_4.2
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,7 +137,7 @@ Ny = Nvec(1,2);                               % Ny, N vector index
 if (Ny >= 0)
     Lomega3 = Lomega2;
 else
-    Lomega3 = 360 - Lomega2;
+    Lomega3 = 360-Lomega2;
 end
 
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
@@ -148,7 +148,7 @@ mu = 398600;                                  % GP for Earth
 
 % mu = input('mu value: ');                   % GP value
 
-evec = (1/mu).*((((v^2)-(mu/r)).*rvec) - (r.*vr.*vvec)); % e vector matrix
+evec = (1/mu).*((((v^2)-(mu/r)).*rvec)-(r.*vr.*vvec)); % e vector matrix
 e = sqrt(sum(evec.*evec));                    % Magnitude of e vector
 
 if (e == 0)
@@ -179,7 +179,7 @@ ez = evec(1,3);                               % ez, e vector index
 if (ez >= 0)
     Somega3 = Somega2;
 else
-    Somega3 = 360 - Somega2;
+    Somega3 = 360-Somega2;
 end
 
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
@@ -194,7 +194,7 @@ fprintf('#Unconfirmed theta  = %.4f degrees\n\n', theta2);
 if (vr >= 0)
     theta3 = theta2;
 else
-    theta3 = 180 - theta2;
+    theta3 = 180-theta2;
 end
 
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
