@@ -30,9 +30,9 @@
 %
 % 7. Calculate node line vector: Nvec = cross(K_hat,hvec) = ??
 % 8. Calculate the magnitude of N: N = sqrt(sum(Nvec.*Nvec))
-% 9. Calculate the right ascension of the ascending node: Lomega = acos(Nx/N) 
+% 9. Calculate the right ascension of the ascending node (?): Lomega = acos(Nx/N) 
 %
-%    #Note: !~RA of the AN (Lomega) is the third(3) orbital element.~!
+%    #Note: !~RA of the AN (?) is the third(3) orbital element.~!
 %           Lomega = acos(Nx/N) for (Ny >= 0)
 %           Lomega = 2*pi - acos(Nx/N) for (Ny < 0)
 %
@@ -40,21 +40,21 @@
 %
 %     #Note: mu = Gravitational Parameter
 %
-% 11. Calculate the eccentricity: e = sqrt(sum(evec.*evec))
+% 11. Calculate the eccentricity (e): e = sqrt(sum(evec.*evec))
 %
 %     #Note: !~Eccentricity (e) is the fourth(4) orbital element.~!
 %
 %     #Alternative: e = sqrt(1 + (h^2/mu^2)*(v^2-(2mu/r)))   
 %
-% 12. Calculate the argument of perigee: Somega = acos(sum((Nvec/N).*(evec/e)))
+% 12. Calculate the argument of perigee (?): Somega = acos(sum((Nvec/N).*(evec/e)))
 %
-%     #Note: !~Argument of Perigee (Somega) is the fifth(5) orbital element.~!
+%     #Note: !~Argument of Perigee (?) is the fifth(5) orbital element.~!
 %            Somega = acos(sum((Nvec/N).*(evec/e))) for (ez >= 0)
 %            Somega = 2*pi - acos(sum((Nvec/N).*(evec/e))) for (ez < 0)
 %
-% 13. Calculate the true anomaly: theta = acos(sum((evec/e).*(rvec/r)))
+% 13. Calculate the true anomaly (?): theta = acos(sum((evec/e).*(rvec/r)))
 %     
-%     #Note: !~True Anomaly (theta) is the sixth(6) orbital element.~!
+%     #Note: !~True Anomaly (?) is the sixth(6) orbital element.~!
 %            theta = acos(sum((evec/e).*(rvec/r))) for (vr >= 0)
 %            theta = 2*pi - acos(sum((evec/e).*(rvec/r))) for (vr < 0)
 %
