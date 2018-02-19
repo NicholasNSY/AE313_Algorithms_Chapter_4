@@ -28,26 +28,26 @@ X = -5368;
 Y = -1784;
 Z = 3691;
 
-% X = input('X Value: ');                 % X,Y,Z values for r vector
+% X = input('X Value: ');                % X,Y,Z values for r vector
 % Y = input('Y Value: ');
 % Z = input('Z Value: ');
 % fprintf('\n');
 
-r = sqrt(X^2+Y^2+Z^2);                  % Magnitude of r vector
+r = sqrt(X^2+Y^2+Z^2);                   % Magnitude of r vector
 
-l = (X/r);                              % Direction of cosines of r vector
+l = (X/r);                               % Direction of cosines of r vector
 m = (Y/r);
 n = (Z/r);
 
-Dec = asin(n);                          % Declination (rad)
+Dec = asin(n);                           % Declination (rad)
 
-if (m > 0)                              % Right Acension (rad)
+if (m > 0)                               % Right Acension (rad)
     RA = acos(l/cos(Dec));
 else
     RA = 2*pi - acos(l/cos(Dec));
 end
 
-Dec2 = (180/pi)*(Dec);                  % Data Conversion
+Dec2 = (180/pi)*(Dec);                   % Data Conversion
 RA2 = (180/pi)*(RA);
 
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
@@ -56,11 +56,9 @@ fprintf('         Right Ascension = %.4f degrees\n', RA2);
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
 
 beep
-toc                                     % End                                
+toc                                      % End                                
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % NicholasNSY (2018)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-% Kappa KappaGold KappaPride?
 fprintf('\n')
-fprintf('Kappa KappaGold KappaPride?\n')
+fprintf('Kappa KappaGold KappaPride?\n') % Kappa KappaGold KappaPride?   
