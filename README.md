@@ -20,4 +20,23 @@
                                  
 **3. ALGORITHM 4.3, dcm_to_euler.m**
 - **__Status__**: :+1:
-  - Direction Cosine Matrix to Classical Euler Rotation Sequence (**α, β, γ**).                                 
+  - Direction Cosine Matrix to Classical Euler Rotation Sequence (**α, β, γ**)                               
+
+**4. ALGORITHM 4.4, dcm_to_ypr.m**
+- **__Status__**:  :computer:
+  - Direction Cosine Matrix to Yaw, Pitch and Roll Sequence (**α, β, γ**)
+
+**5. ALGORITHM 4.5, Orbital_Elements_to_State_Vector.m**
+- **__Status__**:  :computer:
+  - Convert Orbital Elements (**h, i, Ω, e, ω, θ**) to State Vector (**r** *&* **v**)
+
+**6. ALGORITHM 4.6, ground_track.m**
+- **__Status__**:  :computer:
+  - Obtain Right Acension(**α**) and Declination (**δ**) from initial orbital elements such as:
+    - Specific Angular Momentum (**h**)
+    - Eccentricity (**e**)
+    - ?
+    - ?
+    - Argument of Perigee (**ωo**)  
+    - Right Ascension of the Ascending Node (**Ωo**)  
+    - True Anomaly (**θo**) 
