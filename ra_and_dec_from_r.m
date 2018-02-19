@@ -24,14 +24,14 @@ tic
 
 fprintf("ALGORITHM 4.1 (RA and Dec from r)\n\n");
 
-X = -5368;
-Y = -1784;
-Z = 3691;
+% X = -5368;
+% Y = -1784;
+% Z = 3691;
 
-% X = input('X Value: ');                % X,Y,Z values for r vector
-% Y = input('Y Value: ');
-% Z = input('Z Value: ');
-% fprintf('\n');
+X = input('X Value: ');                  % X,Y,Z values for r vector
+Y = input('Y Value: ');
+Z = input('Z Value: ');
+fprintf('\n');
 
 r = sqrt(X^2+Y^2+Z^2);                   % Magnitude of r vector
 
