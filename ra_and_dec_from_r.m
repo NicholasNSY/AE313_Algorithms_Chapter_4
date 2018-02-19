@@ -51,4 +51,3 @@ fprintf('         Right Ascension = %.4f degrees\n', RA2);
 
 %% ERAU
 % NicholasNSY (2018)
-
