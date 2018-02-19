@@ -6,8 +6,7 @@
 % Credits: Prof. Howard D. Curtis (ERAU)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % Given the position vector r=XI+YJ+ZK, calculate the RA (alpha) and Dec
-% (delta). This procedure is implemented in MATLAB as ra_and_dec_from_r.m,
-% which appears in Appendix D.17.
+% (delta).
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % Guide:
 % 1. Calculate the magnitude of r: r = sqrt(X^2+Y^2+Z^2)
