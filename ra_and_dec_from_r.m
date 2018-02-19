@@ -11,10 +11,10 @@
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % Guide:
 % 1. Calculate the magnitude of r: r = sqrt(X^2+Y^2+Z^2)
-% 2. Calculate the direction cosines of r: l=(X/r), m=(Y/r), n=(Z/r)
-% 3. Calculate the Dec: Dec=arcsin(n)
-% 4. Calculate the RA: RA= arcos(l/cos(Dec)) for (m>0)
-%                      RA= 360deg-(arcos(l/cos(Dec))) for (m<=0)
+% 2. Calculate the direction cosines of r: l = (X/r), m = (Y/r), n = (Z/r)
+% 3. Calculate the Dec: Dec = arcsin(n)
+% 4. Calculate the RA: RA = arcos(l/cos(Dec)) for (m>0)
+%                      RA = 2*pi - (arcos(l/cos(Dec))) for (m<=0)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %% Algorithm_4.1
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,7 +49,8 @@ RA2 = (180/pi)*(RA);
 fprintf('Results: Declination = %.4f degrees\n', Dec2); 
 fprintf('         Right Ascension = %.4f degrees\n', RA2);
 
-% End
+                                        % End
+
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % NicholasNSY (2018)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
