@@ -74,26 +74,26 @@ rvecx = -6045;
 rvecy = -3490;
 rvecz = 2500;
 
-% rvecx = input('r vector X value: ');      % X,Y,Z values for r vector
+% rvecx = input('r vector X value: ');        % X,Y,Z values for r vector
 % rvecy = input('r vector Y value: ');
 % rvecz = input('r vector Z value: ');
 % fprintf('\n');
 
-rvec = [rvecx,rvecy,rvecz];                 % r vector matrix
+rvec = [rvecx,rvecy,rvecz];                   % r vector matrix
 
 vvecx = -3.457;
 vvecy = 6.618;
 vvecz = 2.533;
 
-% vvecx = input('v vector X value: ');      % X,Y,Z values for v vector
+% vvecx = input('v vector X value: ');        % X,Y,Z values for v vector
 % vvecy = input('v vector Y value: ');
 % vvecz = input('v vector Z value: ');
 % fprintf('\n');
 
-vvec = [vvecx,vvecy,vvecz];                 % v vector matrix
-r = sqrt(sum(rvec.*rvec));                  % Magnitude of r vector
-v = sqrt(sum(vvec.*vvec));                  % Magnitude of v vector
-vr  = (sum(rvec.*vvec))/r;                  % Radial velocity
+vvec = [vvecx,vvecy,vvecz];                   % v vector matrix
+r = sqrt(sum(rvec.*rvec));                    % Magnitude of r vector
+v = sqrt(sum(vvec.*vvec));                    % Magnitude of v vector
+vr  = (sum(rvec.*vvec))/r;                    % Radial velocity
 
 if (vr > 0)
     fprintf('#Object transit away from perigee.\n\n');
@@ -101,16 +101,16 @@ else
     fprintf('#Object transit toward perigee.\n\n');
 end
 
-hvec = cross(rvec,vvec);                    % h vector matrix
-h = sqrt(sum(hvec.*hvec));                  % Magnitude of h vector
+hvec = cross(rvec,vvec);                      % h vector matrix
+h = sqrt(sum(hvec.*hvec));                    % Magnitude of h vector
 
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 fprintf('Orbital Element h = %.4f\n', h);
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
 
-hz = hvec(1,3);                             % hz, h vector index
-i = acos((hz)/h);                           % Inclination (rad)
-i2 = (180/pi)*(i);                          % Inclination Data Conversion
+hz = hvec(1,3);                               % hz, h vector index
+i = acos((hz)/h);                             % Inclination (rad)
+i2 = (180/pi)*(i);                            % Inclination Data Conversion
 
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 fprintf('Orbital Element i = %.4f degrees\n', i2);
@@ -122,17 +122,17 @@ else
     fprintf('#Orbit is Retrograde.\n\n');
 end
 
-K_hat = [0,0,1];                            % K Vector Determination
-Nvec = cross(K_hat,hvec);                   % Node line vector N
-N = sqrt(sum(Nvec.*Nvec));                  % Magnitude of N vector
+K_hat = [0,0,1];                              % K Vector Determination
+Nvec = cross(K_hat,hvec);                     % Node line vector N
+N = sqrt(sum(Nvec.*Nvec));                    % Magnitude of N vector
 
-Nx = Nvec(1,1);                             % Nx, N vector index
-Lomega = acos(Nx/N);                        % RA of AN, Lomega (rad)  
-Lomega2 = (180/pi)*(Lomega);                % Lomega Data Conversion
+Nx = Nvec(1,1);                               % Nx, N vector index
+Lomega = acos(Nx/N);                          % RA of AN, Lomega (rad)  
+Lomega2 = (180/pi)*(Lomega);                  % Lomega Data Conversion
 
 fprintf('#Unconfirmed Lomega  = %.4f degrees\n\n', Lomega2);
 
-Ny = Nvec(1,2);                             % Ny, N vector index
+Ny = Nvec(1,2);                               % Ny, N vector index
 
 if (Ny >= 0)
     Lomega3 = Lomega2;
@@ -144,12 +144,12 @@ fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 fprintf('Orbital Element Lomega = %.4f degrees\n', Lomega3);
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
 
-mu = 398600;                                % GP for Earth
+mu = 398600;                                  % GP for Earth
 
-% mu = input('mu value: ');                 % GP value
+% mu = input('mu value: ');                   % GP value
 
 evec = (1/mu).*((((v^2)-(mu/r)).*rvec) - (r.*vr.*vvec)); % e vector matrix
-e = sqrt(sum(evec.*evec));                  % Magnitude of e vector
+e = sqrt(sum(evec.*evec));                    % Magnitude of e vector
 
 if (e == 0)
     fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
@@ -169,12 +169,12 @@ else
     fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
 end
 
-Somega = acos(sum((Nvec/N).*(evec/e)));     % A of P, Somega (rad)
-Somega2 = (180/pi)*(Somega);                % Somega Data Conversion
+Somega = acos(sum((Nvec/N).*(evec/e)));       % A of P, Somega (rad)
+Somega2 = (180/pi)*(Somega);                  % Somega Data Conversion
 
 fprintf('#Unconfirmed Somega  = %.4f degrees\n\n', Somega2);
 
-ez = evec(1,3);                             % ez, e vector index
+ez = evec(1,3);                               % ez, e vector index
 
 if (ez >= 0)
     Somega3 = Somega2;
@@ -186,8 +186,8 @@ fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n');
 fprintf('Orbital Element Somega = %.4f degrees\n', Somega3);
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
 
-theta = acos(sum((evec/e).*(rvec/r)));      % True Anomaly, theta
-theta2 = (180/pi)*(theta);                  % theta Data Conversion
+theta = acos(sum((evec/e).*(rvec/r)));        % True Anomaly, theta
+theta2 = (180/pi)*(theta);                    % theta Data Conversion
 
 fprintf('#Unconfirmed theta  = %.4f degrees\n\n', theta2);
 
@@ -202,11 +202,9 @@ fprintf('Orbital Element theta = %.4f degrees\n', theta3);
 fprintf('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n');
 
 beep
-toc                                         % End                                
+toc                                           % End                                
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % NicholasNSY (2018)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-% Kappa KappaGold KappaPride?
 fprintf('\n')
-fprintf('Kappa KappaGold KappaPride?\n')
+fprintf('Kappa KappaGold KappaPride?\n')      % Kappa KappaGold KappaPride? 
