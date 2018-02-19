@@ -9,7 +9,7 @@
 
 
 **2. ALGORITHM 4.2, Orbital_Elements_from_State_Vector.m**
-- **__Status__**: :computer:
+- **__Status__**: :+1:
   - Obtain Orbital Elements from State Vector (**r** *&* **v**) such as: 
     - Specific Angular Momentum (**h**)
     - Inclination (**i**)               
