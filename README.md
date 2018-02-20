@@ -23,7 +23,7 @@
   - Direction Cosine Matrix to Classical Euler Rotation Sequence (**α, β, γ**)                               
 
 **4. ALGORITHM 4.4, dcm_to_ypr.m**
-- **__Status__**:  :computer:
+- **__Status__**:  :+1:
   - Direction Cosine Matrix to Yaw, Pitch and Roll Sequence (**α, β, γ**)
 
 **5. ALGORITHM 4.5, Orbital_Elements_to_State_Vector.m**
