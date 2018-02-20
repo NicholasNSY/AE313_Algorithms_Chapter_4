@@ -32,7 +32,7 @@ fprintf("ALGORITHM 4.3 (Direction Cosine Matrix to Euler Rotation Sequence)\n\n"
 % Q32 = -0.17101;
 % Q33 = -0.98481;
 
-Q11 = input('Q11 value: ');                       % Values for Q matrix
+Q11 = input('Q11 value: ');                         % Values for Q matrix
 Q12 = input('Q12 value: ');
 Q13 = input('Q13 value: ');
 Q21 = input('Q21 value: ');
@@ -90,4 +90,4 @@ toc                                                 % End
 % NicholasNSY (2018)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 fprintf('\n')
-fprintf('Kappa KappaGold KappaPride?\n')      % Kappa KappaGold KappaPride? 
+fprintf('Kappa KappaGold KappaPride?\n')      % Kappa KappaGold KappaPride?
