@@ -207,4 +207,4 @@ toc                                           % End
 % NicholasNSY (2018)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 fprintf('\n')
-fprintf('Kappa KappaGold KappaPride?\n')      % Kappa KappaGold KappaPride? 
+fprintf('Kappa KappaGold KappaPride?\n')      % Kappa KappaGold KappaPride?
