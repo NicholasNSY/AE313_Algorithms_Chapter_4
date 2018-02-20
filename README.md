@@ -27,7 +27,7 @@
   - Direction Cosine Matrix to Yaw, Pitch and Roll Sequence (**α, β, γ**)
 
 **5. ALGORITHM 4.5, Orbital_Elements_to_State_Vector.m**
-- **__Status__**:  :computer:
+- **__Status__**:  :+1:
   - Convert Orbital Elements (**h, i, Ω, e, ω, θ**) to State Vector (**r** *&* **v**)
 
 **6. ALGORITHM 4.6, ground_track.m**
