@@ -6,7 +6,7 @@
 % Credits: Prof. Howard D. Curtis (ERAU)
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % Given the direction cosine matrix Q. Find the angles alpha, beta, gamma
-% of the classical Euler rotation sequence. 
+% of the yaw, pitch, and roll rotation sequence. 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 % Guide:
 % 1. alpha = atan(Q12/Q11) where (0 <= alpha < 2*pi)
